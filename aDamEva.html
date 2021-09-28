@@ -7,11 +7,12 @@
 <body>
 <script>
     class Apple {
-        constructor() {
-            this.weight = 10;
+        constructor(weight) {
+            this.weight = weight;
         }
 
         decrease() {
+            this.weight-=1
         }
 
         isEmpty() {
@@ -42,20 +43,24 @@
             }
         }
 
-        setGender() {
+        setGender(gender) {
+            this.gender=gender
+        }
+
+        getGender() {
+             return this.gender
         }
 
         checkApple(apple) {
-            if (apple === true) {
-                return true;
-            } else {
-                return false
-            }
+            apple.isEmpty()
         }
 
         eat(apple) {
-            if (apple === true) {
+            if (apple.isEmpty()) {
+                apple.decrease();
                 this.weight += 1
+            }else {
+                alert('ko lam ma doi co an ....')
             }
         }
 
@@ -79,10 +84,9 @@
             this.weight = weight
         }
     }
-    let apple=new Apple()
+    let apple=new Apple(10)
     let adam=new Human('Adam',25,'male')
     let eva=new Human('Eva',24,'female')
-
 </script>
 </body>
 </html>
